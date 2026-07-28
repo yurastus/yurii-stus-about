@@ -18,7 +18,8 @@
         <div class="cv-contact">
           <span>Lviv, Ukraine</span>
           <span>Open to Relocate to London, UK</span>
-          <span>Email: stusyura@gmail.com</span>
+          <a href="mailto:stusyura@gmail.com" data-email-trigger>stusyura@gmail.com</a>
+          <a href="https://github.com/yurastus" target="_blank" rel="noopener noreferrer">GitHub</a>
           <span>Eligible for UK Skilled Worker Visa Sponsorship</span>
           <a href="about/">Open About Page</a>
         </div>
@@ -150,6 +151,25 @@
         </article>
       </section>
     </main>
+
+    <div class="email-modal" id="emailModal" hidden>
+      <div class="email-modal__backdrop" data-email-close></div>
+      <div class="email-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="emailModalTitle">
+        <button class="email-modal__close" type="button" data-email-close aria-label="Close">&times;</button>
+        <p class="email-modal__eyebrow">Get in touch</p>
+        <h2 id="emailModalTitle" class="email-modal__title">Email Yurii</h2>
+        <p class="email-modal__desc">Pick your mail app — your message opens pre-filled and ready to send.</p>
+        <div class="email-modal__address">
+          <span id="emailModalAddress">stusyura@gmail.com</span>
+          <button class="email-modal__copy" type="button" data-email-copy>Copy</button>
+        </div>
+        <div class="email-modal__actions">
+          <a class="email-btn email-btn--primary" data-email-gmail target="_blank" rel="noopener noreferrer">Open in Gmail</a>
+          <a class="email-btn email-btn--secondary" data-email-outlook target="_blank" rel="noopener noreferrer">Open in Outlook</a>
+          <a class="email-btn email-btn--secondary" data-email-default>Default mail app</a>
+        </div>
+      </div>
+    </div>
 
     <footer class="site-footer">
       <div class="container">

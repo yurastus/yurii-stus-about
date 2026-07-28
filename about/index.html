@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/favicon.png" />
     <title>Yurii Stus | About</title>
     <meta
       name="description"
@@ -11,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=4" />
   </head>
   <body>
     <div class="page-shell">
@@ -21,17 +23,24 @@
       </button>
       <header class="hero">
         <div class="hero__content">
-          <p class="eyebrow">ABOUT</p>
-          <h1>YURII STUS</h1>
+          <div class="hero__intro">
+            <div class="hero__avatar">
+              <img src="assets/profile.jpg?v=2" alt="Portrait of Yurii Stus" width="180" height="180" loading="eager" />
+            </div>
+            <div class="hero__heading">
+              <h1>YURII STUS</h1>
+            </div>
+          </div>
           <p class="hero__role">Principal SDET | QA Automation Architect | Quality Engineering Lead</p>
           <div class="hero__actions">
+            <a class="btn btn--primary" href="mailto:stusyura@gmail.com" data-email-trigger>Email Me</a>
             <a class="btn btn--primary" href="../index.html">View CV</a>
-            <a class="btn btn--secondary" href="mailto:stusyura@gmail.com">Email Me</a>
+            <a class="btn btn--primary" href="../CV.pdf" download="Yurii-Stus-CV.pdf">Download CV</a>
           </div>
         </div>
         <div class="hero__stats" aria-label="Career highlights">
           <div class="stat-card">
-            <strong>10+</strong>
+            <strong>13+</strong>
             <span>years of enterprise quality engineering experience</span>
           </div>
           <div class="stat-card">
@@ -44,7 +53,7 @@
           </div>
           <div class="stat-card">
             <strong>4–10</strong>
-            <span>engineers mentored and led across programs</span>
+            <span>member engineering teams led across multiple programs</span>
           </div>
         </div>
       </header>
@@ -52,6 +61,7 @@
       <nav class="section-nav" aria-label="Page sections">
         <a href="#summary">Summary</a>
         <a href="#experience">Experience</a>
+        <a href="#techstack">Tech Stack</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -59,10 +69,10 @@
       <main>
         <section id="summary" class="panel">
           <div class="panel__header">
-            <p class="eyebrow">Professional Summary</p>
+            <p class="eyebrow">Summary</p>
           </div>
           <div class="copy-block">
-            <p>Principal Software Development Engineer in Test (SDET) and Quality Engineering Lead with 10+ years of experience delivering enterprise-scale Quality Engineering solutions across Fleet Management, Healthcare, Smart Home and Digital Platforms.</p>
+            <p>Principal Software Development Engineer in Test (SDET) and Quality Engineering Lead with 13+ years of experience delivering enterprise-scale Quality Engineering solutions across Fleet Management, Healthcare, Smart Home and Digital Platforms.</p>
             <p>Proven track record of leading multiple automation initiatives, designing scalable UI and API automation frameworks, driving automation strategy and improving engineering quality across distributed Agile teams.</p>
             <p>Experienced in leading Automation QA teams of up to 10 engineers, mentoring engineers, conducting technical interviews, collaborating with Architects, Engineering Managers and Product Owners, and enabling continuous delivery through modern Quality Engineering practices.</p>
             <p>Strong expertise in Java, Selenium, Playwright, API Automation, CI/CD, AI-assisted engineering and automation architecture.</p>
@@ -71,11 +81,11 @@
 
         <section id="experience" class="panel">
           <div class="panel__header">
-            <p class="eyebrow">Professional Experience</p>
+            <p class="eyebrow">Experience</p>
           </div>
           <div class="timeline">
             <article class="timeline-item">
-              <div class="timeline-item__meta">12.2017 – Present</div>
+              <div class="timeline-item__meta">12.2017 – present</div>
               <div>
                 <h3>EPAM SYSTEMS</h3>
                 <p class="timeline-item__role">Principal SDET | Lead Automation QA Engineer (Penske, Amway, Mitsubishi Smart Home)</p>
@@ -88,6 +98,7 @@
                   <li>Managed and mentored Automation QA teams of 4–10 engineers.</li>
                   <li>Collaborated with Architects, Engineering Managers, Product Owners, Developers and DevOps teams.</li>
                   <li>Established automation standards, reusable framework components and best practices.</li>
+                  <li>Implemented Cucumber BDD to enable behaviour-driven test scenarios and improve collaboration with Product Owners.</li>
                   <li>Estimated delivery effort and reported quality metrics to stakeholders.</li>
                   <li>Modernised legacy automation frameworks to improve scalability and maintainability.</li>
                 </ul>
@@ -100,10 +111,11 @@
                   <li>Increased API automation coverage to 95–100% for critical business services.</li>
                   <li>Designed reusable automation frameworks adopted across multiple teams.</li>
                   <li>Introduced AI-assisted engineering practices using GitHub Copilot/Claude code and MCP.</li>
+                  <li>Implemented Allure reporting to improve test result visibility and traceability across teams.</li>
                   <li>Improved collaboration between QA, Development, DevOps and Product teams, increasing release confidence.</li>
                 </ul>
                 <p class="timeline-item__subheading">Environment</p>
-                <p class="timeline-item__env">Java • TypeScript • Selenium • Playwright • Karate DSL • REST Assured • BrowserStack • Maven • TestNG • JUnit 5 • SQL • Git • Jenkins • GitHub Copilot • MCP • Jira</p>
+                <p class="timeline-item__env">Java • TypeScript • Selenium • Playwright • Karate DSL • REST Assured • BrowserStack • Maven • TestNG • JUnit 5 • Cucumber BDD • Allure • SQL • Git • Jenkins • GitHub Copilot • MCP • Jira</p>
               </div>
             </article>
 
@@ -186,6 +198,38 @@
           </div>
         </section>
 
+        <section id="techstack" class="panel">
+          <div class="panel__header">
+            <p class="eyebrow">Tech Stack</p>
+          </div>
+          <div class="badge-list">
+            <span>Java</span>
+            <span>TypeScript</span>
+            <span>Python</span>
+            <span>SQL</span>
+            <span>Selenium</span>
+            <span>Selenium WebDriver</span>
+            <span>Playwright</span>
+            <span>Karate DSL</span>
+            <span>REST Assured</span>
+            <span>HTTP Client</span>
+            <span>SoapUI</span>
+            <span>TestNG</span>
+            <span>JUnit 5</span>
+            <span>pytest</span>
+            <span>Cucumber BDD</span>
+            <span>Allure</span>
+            <span>BrowserStack</span>
+            <span>Maven</span>
+            <span>Jenkins</span>
+            <span>Git</span>
+            <span>Linux</span>
+            <span>GitHub Copilot</span>
+            <span>MCP</span>
+            <span>Jira</span>
+          </div>
+        </section>
+
         <section id="education" class="panel">
           <div class="panel__header">
             <p class="eyebrow">Education</p>
@@ -203,11 +247,11 @@
             <p class="eyebrow">Get in Touch</p>
             <p class="contact-heading contact-heading--lead">Open to collaboration on automation architecture and quality engineering</p>
           </div>
-          <p class="contact-heading">Open to Relocate to London, UK</p>
-          <p class="contact-heading">Eligible for UK Skilled Worker Visa Sponsorship</p>
+          <p class="contact-heading">Eligible for Skilled Worker Visa Sponsorship</p>
           <div class="contact-links">
-            <a href="mailto:stusyura@gmail.com">Email</a>
-            <a href="https://www.linkedin.com/in/sdetbaveer/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="mailto:stusyura@gmail.com" data-email-trigger>Email</a>
+            <a href="https://www.linkedin.com/in/yury-stus-a6939b69/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://github.com/yurastus" target="_blank" rel="noreferrer">GitHub</a>
           </div>
         </section>
       </main>
@@ -215,6 +259,25 @@
       <footer class="footer">
         <p>© <span id="year"></span> Yurii Stus • Built for GitHub Pages</p>
       </footer>
+    </div>
+
+    <div class="email-modal" id="emailModal" hidden>
+      <div class="email-modal__backdrop" data-email-close></div>
+      <div class="email-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="emailModalTitle">
+        <button class="email-modal__close" type="button" data-email-close aria-label="Close">&times;</button>
+        <p class="eyebrow">Get in touch</p>
+        <h2 id="emailModalTitle" class="email-modal__title">Email Yurii</h2>
+        <p class="email-modal__desc">Pick your mail app — your message opens pre-filled and ready to send.</p>
+        <div class="email-modal__address">
+          <span id="emailModalAddress">stusyura@gmail.com</span>
+          <button class="email-modal__copy" type="button" data-email-copy>Copy</button>
+        </div>
+        <div class="email-modal__actions">
+          <a class="btn btn--primary" data-email-gmail target="_blank" rel="noopener noreferrer">Open in Gmail</a>
+          <a class="btn btn--secondary" data-email-outlook target="_blank" rel="noopener noreferrer">Open in Outlook</a>
+          <a class="btn btn--secondary" data-email-default>Default mail app</a>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -244,6 +307,101 @@
         localStorage.setItem('about-theme', nextTheme);
         applyTheme(nextTheme);
       });
+
+      (function setupEmailModal() {
+        const modal = document.getElementById('emailModal');
+        const triggers = document.querySelectorAll('[data-email-trigger]');
+        if (!modal || !triggers.length) return;
+
+        const address = 'stusyura@gmail.com';
+        const subject = "Let's connect — opportunity to discuss";
+        const body = 'Hi Yurii,\n\n';
+        const enc = encodeURIComponent;
+
+        const dialog = modal.querySelector('.email-modal__dialog');
+        const copyBtn = modal.querySelector('[data-email-copy]');
+        const gmailLink = modal.querySelector('[data-email-gmail]');
+        const outlookLink = modal.querySelector('[data-email-outlook]');
+        const defaultLink = modal.querySelector('[data-email-default]');
+
+        gmailLink.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${enc(address)}&su=${enc(subject)}&body=${enc(body)}`;
+        outlookLink.href = `https://outlook.office.com/mail/deeplink/compose?to=${enc(address)}&subject=${enc(subject)}&body=${enc(body)}`;
+        defaultLink.href = `mailto:${address}?subject=${enc(subject)}&body=${enc(body)}`;
+
+        let lastFocused = null;
+
+        const openModal = (event) => {
+          if (event) event.preventDefault();
+          lastFocused = document.activeElement;
+          modal.hidden = false;
+          document.body.style.overflow = 'hidden';
+          requestAnimationFrame(() => modal.classList.add('is-open'));
+          gmailLink.focus();
+        };
+
+        const closeModal = () => {
+          modal.classList.remove('is-open');
+          document.body.style.overflow = '';
+          const finish = () => {
+            modal.hidden = true;
+            dialog.removeEventListener('transitionend', finish);
+          };
+          dialog.addEventListener('transitionend', finish);
+          setTimeout(finish, 250);
+          if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+        };
+
+        triggers.forEach((trigger) => trigger.addEventListener('click', openModal));
+
+        modal.querySelectorAll('[data-email-close]').forEach((el) => el.addEventListener('click', closeModal));
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && !modal.hidden) closeModal();
+        });
+
+        copyBtn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(address);
+          } catch (err) {
+            const temp = document.createElement('input');
+            temp.value = address;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+          }
+          const original = copyBtn.textContent;
+          copyBtn.textContent = 'Copied!';
+          copyBtn.classList.add('is-copied');
+          setTimeout(() => {
+            copyBtn.textContent = original;
+            copyBtn.classList.remove('is-copied');
+          }, 1600);
+        });
+      })();
+
+      (function setupSectionNav() {
+        const navLinks = document.querySelectorAll('.section-nav a');
+        const sections = document.querySelectorAll('main .panel[id]');
+        if (!navLinks.length || !sections.length) return;
+
+        const setActive = (id) => {
+          navLinks.forEach((link) => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+          });
+        };
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) setActive(entry.target.id);
+            });
+          },
+          { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
+        );
+
+        sections.forEach((section) => observer.observe(section));
+      })();
     </script>
   </body>
 </html>

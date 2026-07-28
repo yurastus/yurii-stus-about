@@ -94,6 +94,39 @@ a { color: inherit; }
   backdrop-filter: blur(18px);
 }
 
+.hero__intro {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  margin: 0 0 1.1rem;
+}
+
+.hero__heading {
+  min-width: 0;
+}
+
+.hero__avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+}
+
+.hero__avatar img {
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 25%;
+  border: 3px solid var(--bg-2);
+  box-sizing: border-box;
+}
+
 .eyebrow {
   margin: 0 0 0.45rem;
   font-size: 0.78rem;
@@ -123,10 +156,18 @@ a { color: inherit; }
   color: var(--muted);
 }
 
+.hero__content {
+  display: flex;
+  flex-direction: column;
+}
+
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
 }
 
 .btn {
@@ -175,24 +216,49 @@ a { color: inherit; }
 }
 
 .section-nav {
+  position: sticky;
+  top: 0.75rem;
+  z-index: 30;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem;
-  margin: 1.2rem 0 1rem;
+  justify-content: center;
+  gap: 0.35rem;
+  margin: 1.2rem 0 1.25rem;
+  padding: 0.35rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg-2) 82%, transparent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(14px);
 }
 
 .section-nav a {
+  flex: 1 1 auto;
+  text-align: center;
+  white-space: nowrap;
   text-decoration: none;
-  padding: 0.6rem 0.9rem;
+  padding: 0.55rem 1rem;
   border-radius: 999px;
-  background: var(--surface);
-  border: 1px solid var(--border);
   color: var(--muted);
   font-size: 0.92rem;
+  font-weight: 600;
+  transition: color 160ms ease, background 160ms ease;
+}
+
+.section-nav a:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.section-nav a.active {
+  color: #03111f;
+  background: linear-gradient(135deg, var(--accent), #9ae6ff);
+  border-color: transparent;
 }
 
 .panel {
   margin-top: 1rem;
+  scroll-margin-top: 5rem;
   padding: 1.4rem 1.35rem;
   border: 1px solid var(--border);
   border-radius: 22px;
@@ -270,6 +336,7 @@ a { color: inherit; }
 .timeline-item__meta {
   font-weight: 700;
   color: var(--accent);
+  white-space: nowrap;
 }
 
 .timeline-item__role {
@@ -337,6 +404,125 @@ a { color: inherit; }
   color: var(--muted);
 }
 
+.email-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.email-modal[hidden] { display: none; }
+
+.email-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(3, 9, 18, 0.6);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.email-modal.is-open .email-modal__backdrop { opacity: 1; }
+
+.email-modal__dialog {
+  position: relative;
+  width: min(420px, 100%);
+  padding: 1.75rem 1.6rem 1.6rem;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: var(--panel-bg);
+  background-color: var(--bg-2);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+  transform: translateY(12px) scale(0.98);
+  opacity: 0;
+  transition: transform 220ms ease, opacity 220ms ease;
+}
+
+.email-modal.is-open .email-modal__dialog {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.email-modal__close {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.email-modal__close:hover { transform: scale(1.05); }
+
+.email-modal__title { margin: 0 0 0.35rem; font-size: 1.5rem; }
+
+.email-modal__desc {
+  margin: 0 0 1.1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.email-modal__address {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0.55rem 0.55rem 0.9rem;
+  margin-bottom: 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 0.95rem;
+  overflow: hidden;
+}
+
+.email-modal__address span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.email-modal__copy {
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.4rem 0.85rem;
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.email-modal__copy.is-copied {
+  background: var(--accent);
+  color: #03111f;
+  border-color: transparent;
+}
+
+.email-modal__actions {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.email-modal__actions .btn { width: 100%; }
+
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; }
   .cards-grid,
@@ -347,4 +533,7 @@ a { color: inherit; }
   .page-shell { width: min(100%, calc(100% - 1rem)); padding-top: 1rem; }
   .hero, .panel { padding: 1rem; }
   .timeline-item { grid-template-columns: 1fr; }
+  .hero__intro { flex-direction: column; text-align: center; gap: 1rem; }
+  .hero__avatar { width: 156px; height: 156px; }
+  .hero__avatar img { width: 140px; height: 140px; }
 }
