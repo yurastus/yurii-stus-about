@@ -150,6 +150,15 @@ a { color: inherit; }
   color: var(--role-text);
 }
 
+.hero__tagline {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--role-text);
+  line-height: 1.6;
+}
+
+
 .hero__bio {
   margin: 0 0 1rem;
   max-width: 60ch;

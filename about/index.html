@@ -31,14 +31,20 @@
               <h1>YURII STUS</h1>
             </div>
           </div>
+          <br>
           <p class="hero__role">Principal SDET | QA Automation Architect | Quality Engineering Lead</p>
+          <p class="hero__tagline">Open to collaboration on automation architecture and quality engineering<br>Eligible for Skilled Worker Visa Sponsorship</p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="mailto:stusyura@gmail.com" data-email-trigger>Email Me</a>
-            <a class="btn btn--primary" href="../index.html">View CV</a>
-            <a class="btn btn--primary" href="../CV.pdf" download="Yurii-Stus-CV.pdf">Download CV</a>
+            <a class="btn btn--primary" href="../viewCV/">View CV</a>
+            <button class="btn btn--primary" data-cv-download>Download CV</button>
           </div>
         </div>
         <div class="hero__stats" aria-label="Career highlights">
+          <div class="stat-card">
+            <strong>40%</strong>
+            <span>increase in engineering productivity through AI-assisted engineering practices</span>
+          </div>
           <div class="stat-card">
             <strong>13+</strong>
             <span>years of enterprise quality engineering experience</span>
@@ -72,7 +78,7 @@
             <p class="eyebrow">Summary</p>
           </div>
           <div class="copy-block">
-            <p>Principal Software Development Engineer in Test (SDET) and Quality Engineering Lead with 13+ years of experience delivering enterprise-scale Quality Engineering solutions across Fleet Management, Healthcare, Smart Home and Digital Platforms.</p>
+            <p>Leading Quality Engineering with a focus on automation for 13+ years across enterprise software platforms. Passionate about building scalable automation solutions, defining quality strategies, and enabling engineering teams to deliver reliable, high-quality software.</p>
             <p>Proven track record of leading multiple automation initiatives, designing scalable UI and API automation frameworks, driving automation strategy and improving engineering quality across distributed Agile teams.</p>
             <p>Experienced in leading Automation QA teams of up to 10 engineers, mentoring engineers, conducting technical interviews, collaborating with Architects, Engineering Managers and Product Owners, and enabling continuous delivery through modern Quality Engineering practices.</p>
             <p>Strong expertise in Java, Selenium, Playwright, API Automation, CI/CD, AI-assisted engineering and automation architecture.</p>
@@ -115,7 +121,7 @@
                   <li>Improved collaboration between QA, Development, DevOps and Product teams, increasing release confidence.</li>
                 </ul>
                 <p class="timeline-item__subheading">Environment</p>
-                <p class="timeline-item__env">Java • TypeScript • Selenium • Playwright • Karate DSL • REST Assured • BrowserStack • Maven • TestNG • JUnit 5 • Cucumber BDD • Allure • SQL • Git • Jenkins • GitHub Copilot • MCP • Jira</p>
+                <p class="timeline-item__env">Java • TypeScript • Selenium • Playwright • Karate DSL • REST Assured • BrowserStack • Maven • TestNG • JUnit 5 • Cucumber BDD • Allure • SQL • Git • Jenkins • Claude • GitHub Copilot • MCP • Jira</p>
               </div>
             </article>
 
@@ -224,6 +230,7 @@
             <span>Jenkins</span>
             <span>Git</span>
             <span>Linux</span>
+            <span>Claude</span>
             <span>GitHub Copilot</span>
             <span>MCP</span>
             <span>Jira</span>
@@ -245,9 +252,6 @@
         <section id="contact" class="panel panel--contact">
           <div class="panel__header">
             <p class="eyebrow">Get in Touch</p>
-            <p class="contact-heading contact-heading--lead">Open to collaboration on automation architecture and quality engineering</p>
-          </div>
-          <p class="contact-heading">Eligible for Skilled Worker Visa Sponsorship</p>
           <div class="contact-links">
             <a href="mailto:stusyura@gmail.com" data-email-trigger>Email</a>
             <a href="https://www.linkedin.com/in/yury-stus-a6939b69/" target="_blank" rel="noreferrer">LinkedIn</a>
@@ -402,6 +406,13 @@
 
         sections.forEach((section) => observer.observe(section));
       })();
+      const cvDownloadBtn = document.querySelector('[data-cv-download]');
+      if (cvDownloadBtn) {
+        cvDownloadBtn.addEventListener('click', () => {
+          const win = window.open('../viewCV/', '_blank');
+          win.addEventListener('load', () => win.print());
+        });
+      }
     </script>
   </body>
 </html>
