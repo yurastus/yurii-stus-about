@@ -58,7 +58,8 @@ a { color: inherit; }
 .theme-toggle {
   position: absolute;
   top: 0.35rem;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 10;
   display: inline-flex;
   align-items: center;
@@ -364,6 +365,14 @@ a { color: inherit; }
   color: var(--accent);
   font-weight: 600;
   text-decoration: none;
+}
+
+.cert-placeholder {
+  display: inline-block;
+  flex-basis: 100%;
+  margin-top: 0.5rem;
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .cert-group {
